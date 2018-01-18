@@ -531,6 +531,16 @@
               <FileType>1</FileType>
               <FilePath>..\Src\env_comm.c</FilePath>
             </File>
+            <File>
+              <FileName>umm_malloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\umm_malloc.c</FilePath>
+            </File>
+            <File>
+              <FileName>umm_malloc_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\umm_malloc_test.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

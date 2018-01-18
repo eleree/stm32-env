@@ -310,6 +310,7 @@ char * testKey[] = {
 	"baidu",
 	"baidu123456678",
 };
+int umm_test_main(void) ;
 /* USER CODE END 4 */
 
 /* StartDefaultTask function */
@@ -317,6 +318,8 @@ void StartDefaultTask(void const * argument)
 {
 
 	int i = 0;
+	umm_test_main();
+	
   /* USER CODE BEGIN 5 */	
 	printf("Initial heap size:0x%x\r\n",xPortGetFreeHeapSize());
 	if (himport_r(&env_htab, (char *)default_environment, sizeof(default_environment),
