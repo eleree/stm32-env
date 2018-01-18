@@ -194,18 +194,27 @@ void stressTest(void)
 {
 	int i = 1;
 	printf("Starting Memory Test\r\n");
-	while(i<8000)
+	umm_init();
+	while(1)
 	{
-		char * mp = umm_malloc(i);
+		char * mp = NULL;
+		int size = rand()%(8*1000);
+		if(size == 0)
+			continue;
+		printf("Test size:%d\r\n",size);
+	
+		mp  = umm_malloc(size);
 		if(mp == NULL)
 		{
-				printf("Test Memory Fail,size:%d\r\n",i);
 				umm_info(mp,1);
+				printf("######FAIL#####\r\n");
 				while(1);
 		}
+		
 		umm_free(mp);
-		printf("Alloc memory success,size:%d\r\n",i);
-		i++;
+		printf("Alloc memory success %d,size:%d\r\n",i,size);		
+		if(i++==8000)
+			i=1;
 	}
 	printf("Test Memory Success\r\n");
 }
